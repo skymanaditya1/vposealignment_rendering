@@ -5,7 +5,7 @@ import torch
 from torchvision.utils import save_image
 from tqdm import tqdm
 
-from vqvae import VQVAE
+from models.vqvae import VQVAE
 from pixelsnail import PixelSNAIL
 
 
