@@ -23,15 +23,6 @@ from torch.multiprocessing import set_start_method
 
 size = 256
 
-# transform = transforms.Compose(
-#         [
-#             transforms.ToPILImage(),
-#             transforms.Resize(size),
-#             transforms.CenterCrop(size),
-#             transforms.ToTensor(),
-#             transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
-#         ]
-#     )
 
 transform = transforms.Compose(
     [
@@ -58,9 +49,6 @@ def train(epoch, loader, model, lpips_model, optimizer, scheduler, fa, device):
     recon_loss_weight = 1
     perceptual_loss_weight = 0.25
     sample_size = 25
-
-    # mse_sum = 0
-    # mse_n = 0
 
     perceptual_losses = list()
     recon_losses = list()

@@ -1,12 +1,12 @@
-# import mediapipe as mp
+import mediapipe as mp
 import cv2
 import numpy as np
 
-# mp_drawing = mp.solutions.drawing_utils
-# mp_drawing_styles = mp.solutions.drawing_styles
-# mp_face_mesh = mp.solutions.face_mesh
+mp_drawing = mp.solutions.drawing_utils
+mp_drawing_styles = mp.solutions.drawing_styles
+mp_face_mesh = mp.solutions.face_mesh
 
-# drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
+drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 
 # draw the landmarks on top of the image 
 def drawPolyline(image, landmarks, start, end, isClosed=False):
@@ -66,7 +66,7 @@ def landmark_from_batch(batch_tensor, fa):
 
     return landmarks_np, mask
 
-'''
+
 # generate the mesh directly from the image
 def mesh_from_image(frame, color_transform=False):
     with mp_face_mesh.FaceMesh(
@@ -128,4 +128,3 @@ def mesh_from_filepath(image_path):
             .get_default_face_mesh_tesselation_style())
     
     return annotated_image
-'''
